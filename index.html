@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -7,10 +7,21 @@
     <title>Vite App</title>
   </head>
   <body class="text-text light-theme">
-    <header class="w-full fixed top-12 z-50">
-      <div class="absolute top-0 right-12 flex items-center justify-center gap-4">
-        <div id="light">
-          <svg xmlns="http://www.w3.org/2000/svg" height="28" viewBox="0 -960 960 960" width="28">
+    <header
+      id="header"
+      class="w-full fixed top-4 md:top-12 z-50 opacity-0 pointer-events-none"
+    >
+      <div
+        class="absolute top-0 right-12 flex items-center justify-center gap-2 md:gap-4"
+      >
+        <div id="light" class="cursor-pointer">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="28"
+            viewBox="0 -960 960 960"
+            width="28"
+            class="fill-text"
+          >
             <path
               d="M479.765-340Q538-340 579-380.765q41-40.764 41-99Q620-538 579.235-579q-40.764-41-99-41Q422-620 381-579.235q-41 40.764-41 99Q340-422 380.765-381q40.764 41 99 41Zm.235 60q-83 0-141.5-58.5T280-480q0-83 58.5-141.5T480-680q83 0 141.5 58.5T680-480q0 83-58.5 141.5T480-280ZM70-450q-12.75 0-21.375-8.675Q40-467.351 40-480.175 40-493 48.625-501.5T70-510h100q12.75 0 21.375 8.675 8.625 8.676 8.625 21.5 0 12.825-8.625 21.325T170-450H70Zm720 0q-12.75 0-21.375-8.675-8.625-8.676-8.625-21.5 0-12.825 8.625-21.325T790-510h100q12.75 0 21.375 8.675 8.625 8.676 8.625 21.5 0 12.825-8.625 21.325T890-450H790ZM479.825-760Q467-760 458.5-768.625T450-790v-100q0-12.75 8.675-21.375 8.676-8.625 21.5-8.625 12.825 0 21.325 8.625T510-890v100q0 12.75-8.675 21.375-8.676 8.625-21.5 8.625Zm0 720Q467-40 458.5-48.625T450-70v-100q0-12.75 8.675-21.375 8.676-8.625 21.5-8.625 12.825 0 21.325 8.625T510-170v100q0 12.75-8.675 21.375Q492.649-40 479.825-40ZM240-678l-57-56q-9-9-8.629-21.603.37-12.604 8.526-21.5 8.896-8.897 21.5-8.897Q217-786 226-777l56 57q8 9 8 21t-8 20.5q-8 8.5-20.5 8.5t-21.5-8Zm494 495-56-57q-8-9-8-21.375T678.5-282q8.5-9 20.5-9t21 9l57 56q9 9 8.629 21.603-.37 12.604-8.526 21.5-8.896 8.897-21.5 8.897Q743-174 734-183Zm-56-495q-9-9-9-21t9-21l56-57q9-9 21.603-8.629 12.604.37 21.5 8.526 8.897 8.896 8.897 21.5Q786-743 777-734l-57 56q-8 8-20.364 8-12.363 0-21.636-8ZM182.897-182.897q-8.897-8.896-8.897-21.5Q174-217 183-226l57-56q8.8-9 20.9-9 12.1 0 20.709 9Q291-273 291-261t-9 21l-56 57q-9 9-21.603 8.629-12.604-.37-21.5-8.526ZM480-480Z"
             />
@@ -20,10 +31,19 @@
           id="button-toggle"
           class="cursor-pointer relative w-14 h-7 flex items-center justify-center z-50 rounded-full bg-pink"
         >
-          <span id="toggle-circle" class="rounded-full w-5 h-5 absolute left-2 bg-yellow"></span>
+          <span
+            id="toggle-circle"
+            class="rounded-full w-5 h-5 absolute left-2 bg-yellow"
+          ></span>
         </button>
-        <div id="dark">
-          <svg xmlns="http://www.w3.org/2000/svg" height="28" viewBox="0 -960 960 960" width="28">
+        <div id="dark" class="cursor-pointer">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="28"
+            viewBox="0 -960 960 960"
+            width="28"
+            class="fill-text"
+          >
             <path
               d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q8 0 17 .5t23 1.5q-36 32-56 79t-20 99q0 90 63 153t153 63q52 0 99-18.5t79-51.5q1 12 1.5 19.5t.5 14.5q0 150-105 255T480-120Zm0-60q109 0 190-67.5T771-406q-25 11-53.667 16.5Q688.667-384 660-384q-114.689 0-195.345-80.655Q384-545.311 384-660q0-24 5-51.5t18-62.5q-98 27-162.5 109.5T180-480q0 125 87.5 212.5T480-180Zm-4-297Z"
             />
@@ -32,21 +52,81 @@
       </div>
     </header>
     <main>
-      <div class="w-full h-screen relative" asscroll-container>
+      <div id="app" class="w-full h-screen relative" asscroll-container>
+        <div
+          id="loading-spinner"
+          class="fixed w-full h-screen inset-0 flex items-center justify-center gap-4 z-[9999] bg-[#D1BDBD]"
+        >
+          <span
+            class="w-4 h-4 rounded-full bg-white animate-[loading_1s_ease-in-out_infinite]"
+          ></span>
+          <span
+            class="w-4 h-4 rounded-full bg-white animate-[loading_1s_ease-in-out_infinite_100ms]"
+          ></span>
+          <span
+            class="w-4 h-4 rounded-full bg-white animate-[loading_1s_ease-in-out_infinite_200ms]"
+          ></span>
+        </div>
         <div class="fixed h-screen w-full">
           <canvas id="viewer-canvas"></canvas>
         </div>
 
-        <div asscroll>
+        <div class="relative" asscroll>
           <section class="h-screen w-full">
             <div class="max-w-[1000px] m-auto relative h-full">
-              <div class="absolute top-[calc(50%-100px)] right-0 max-md:top-[calc(50%-12rem)] max-md:right-10">
-                <h1 class="text-4xl uppercase max-md:text-lg transition">Sam</h1>
-                <p class="text-4xl uppercase max-md:text-lg transition">Portfolio</p>
+              <h1
+                id="text-loading"
+                class="font-bold absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] flex items-center justify-center overflow-hidden"
+              >
+                Welcome to the my room!
+              </h1>
+              <div
+                id="scroll-icon"
+                class="absolute bottom-10 left-1/2 translate-x-[-50%] opacity-0"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="36"
+                  viewBox="0 -960 960 960"
+                  width="36"
+                  class="fill-text animate-bounce"
+                >
+                  <path
+                    d="M480-345 240-585l43-43 197 198 197-197 43 43-240 239Z"
+                  />
+                </svg>
               </div>
-              <div class="absolute bottom-[calc(50%-268px)] left-0">
-                <h2 class="text-6xl uppercase transition">Sam</h2>
-                <p class="text-lg transition">Noob Developer</p>
+              <div
+                class="absolute top-[calc(50%-100px)] right-0 max-md:top-[calc(50%-12rem)] max-md:right-10"
+              >
+                <h2
+                  id="text-showcase1"
+                  class="text-4xl uppercase max-md:text-lg transition flex items-center overflow-hidden"
+                >
+                  Sam
+                </h2>
+                <p
+                  id="text-showcase2"
+                  class="text-4xl uppercase max-md:text-lg transition flex items-center overflow-hidden"
+                >
+                  Portfolio
+                </p>
+              </div>
+              <div
+                class="absolute bottom-24 md:bottom-[calc(50%-268px)] left-4 md:left-0"
+              >
+                <h2
+                  id="text-showcase3"
+                  class="text-2xl md:text-6xl font-bold uppercase transition flex items-center overflow-hidden"
+                >
+                  Sam
+                </h2>
+                <p
+                  id="text-showcase4"
+                  class="text-sm md:text-lg transition flex items-center overflow-hidden"
+                >
+                  Nguyên Thành | Fullstack developer
+                </p>
               </div>
             </div>
           </section>
@@ -55,9 +135,20 @@
 
           <section
             id="content"
-            class="w-1/2 relative border overflow-hidden py-[1000px] px-[4%] bg-background rounded-tr-[650px] rounded-br-[10px]"
+            class="md:w-1/2 relative border overflow-hidden py-[1000px] px-[4%] bg-background rounded-tr-[650px] rounded-br-[10px]"
           >
-            <div class="relative pt-[20%] px-[5%] pb-[400px] border-b border-pink">
+            <div
+              id="progress-wrapper"
+              class="absolute left-0 top-0 h-0 w-[12px] z-[999]"
+            >
+              <span
+                id="progress"
+                class="bg-pink w-full h-screen origin-top scale-y-100 block"
+              ></span>
+            </div>
+            <div
+              class="relative pt-[20%] px-[5%] pb-[400px] border-b border-pink"
+            >
               <h2>
                 <span
                   class="absolute block top-0 w-full max-w-[280px] h-[60px] border border-pink skew-y-[-25deg] origin-left"
@@ -68,16 +159,46 @@
                 <span
                   class="absolute top-[80px] block w-full max-w-[280px] h-[60px] border border-pink bg-pink skew-y-[25deg] origin-left"
                 ></span>
-                <span class="absolute top-0 block text-[40px] skew-y-[25deg] origin-left uppercase text-pink"
+                <span
+                  class="absolute top-0 block text-[40px] skew-y-[25deg] origin-left uppercase text-pink"
                   >About me</span
                 >
               </h2>
-              <span class="absolute right-0 bottom-[15px] text-pink text-2xl">01</span>
+              <span class="absolute right-0 bottom-[15px] text-pink text-2xl"
+                >01</span
+              >
             </div>
-            <div class="py-[20%] px-[5%]">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit deserunt id inventore accusantium cum
-              tempora earum, sint saepe voluptates, repudiandae doloremque nulla maxime minima ipsum eveniet quis
-              tenetur? Nisi, consectetur?
+            <div class="py-[20%] px-[5%] flex flex-col gap-8">
+              <p class="font-bold">Hi there! I'm Sam,</p>
+              <p>I am a frontend developer with 3 years of experience</p>
+              <p>
+                My main work currently revolves around HTML, CSS, JS (VueJS,
+                ReactJS, jquery,...). In addition, I also know how to write
+                backend using NodeJS/Express
+              </p>
+              <p>
+                I really like learning new things and challenging myself in
+                challenging environments
+              </p>
+              <p class="italic">
+                During the period (1/2023 - 10/2023), due to health reasons, I
+                have temporarily postponed all my work. At that time, I focus on
+                developing myself, giving up bad habits (online games, smoking,
+                staying up late,...) to replace them with new ones (reading,
+                going to the gym, studying,...). I have completed 70% of
+                blocking, and am continuing to block my path
+              </p>
+              <p class="italic">
+                My main work often is VueJS, I just taught myself
+                ReactJS/NestJS/Typescript during that time.
+                <br />
+                I'm aiming to learn ThreeJS by myself because I love doing
+                animations
+              </p>
+              <p class="italic">
+                And now I'm healthy again, if you have any job related to me,
+                don't hesitate to contact me
+              </p>
             </div>
           </section>
 
@@ -85,32 +206,64 @@
 
           <section
             id="content"
-            class="w-1/2 relative border overflow-hidden py-[1000px] px-[4%] bg-background ml-auto rounded-tl-[650px] rounded-bl-[10px]"
+            class="md:w-1/2 relative border overflow-hidden py-[1000px] px-[4%] bg-background ml-auto rounded-tl-[650px] rounded-bl-[10px]"
           >
-            <div id="progress-wrapper" class="absolute right-0 top-0 h-0 w-[12px] z-[999]">
-              <span id="progress" class="bg-pink w-full h-screen origin-top scale-y-100 block"></span>
+            <div
+              id="progress-wrapper"
+              class="absolute right-0 top-0 h-0 w-[12px] z-[999]"
+            >
+              <span
+                id="progress"
+                class="bg-blue w-full h-screen origin-top scale-y-100 block"
+              ></span>
             </div>
-            <div class="relative pt-[20%] px-[5%] pb-[400px] border-b border-pink">
+            <div
+              class="relative pt-[20%] px-[5%] pb-[400px] border-b border-blue"
+            >
               <h2>
                 <span
-                  class="absolute block top-0 w-full max-w-[280px] h-[60px] border border-pink skew-y-[-25deg] origin-left"
+                  class="absolute block top-0 w-full max-w-[280px] h-[60px] border border-blue skew-y-[-25deg] origin-left"
                 ></span>
                 <span
-                  class="absolute top-[80px] block w-full max-w-[280px] h-[60px] border border-pink skew-y-[-25deg] origin-left"
+                  class="absolute top-[80px] block w-full max-w-[280px] h-[60px] border border-blue skew-y-[-25deg] origin-left"
                 ></span>
                 <span
-                  class="absolute top-[80px] block w-full max-w-[280px] h-[60px] border border-pink bg-pink skew-y-[25deg] origin-left"
+                  class="absolute top-[80px] block w-full max-w-[280px] h-[60px] border border-blue bg-blue skew-y-[25deg] origin-left"
                 ></span>
-                <span class="absolute top-0 block text-[40px] skew-y-[25deg] origin-left uppercase text-pink"
-                  >About me</span
+                <span
+                  class="absolute top-0 block text-[40px] skew-y-[25deg] origin-left uppercase text-blue"
+                  >My work</span
                 >
               </h2>
-              <span class="absolute right-0 bottom-[15px] text-pink text-2xl">01</span>
+              <span class="absolute right-0 bottom-[15px] text-blue text-2xl"
+                >02</span
+              >
             </div>
             <div class="py-[20%] px-[5%]">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit deserunt id inventore accusantium cum
-              tempora earum, sint saepe voluptates, repudiandae doloremque nulla maxime minima ipsum eveniet quis
-              tenetur? Nisi, consectetur?
+              <ul class="flex flex-col gap-y-8">
+                <li class="gap-y-2">
+                  <h3 class="font-bold">
+                    Fastcoding Vietnam (<a
+                      href="https://fastcoding.jp/"
+                      target="_blank"
+                      rel="noopener"
+                      >https://fastcoding.jp/</a
+                    >)
+                  </h3>
+                  <p>
+                    I have been working there for nearly 3 years with the
+                    JavaScript Developer position
+                  </p>
+                  <ul>
+                    <li>- Handle Javascript/VueJS works</li>
+                    <li>
+                      - Convert PSD, AI, XD to website for Japanese customers.
+                    </li>
+                    <li>- Custom animation by Jquery and GSAP</li>
+                    <li>- Make templates and tools to save time by NodeJS</li>
+                  </ul>
+                </li>
+              </ul>
             </div>
           </section>
 
@@ -118,29 +271,71 @@
 
           <section
             id="content"
-            class="w-1/2 relative border overflow-hidden py-[1000px] px-[4%] bg-background rounded-tr-[650px] rounded-br-[10px]"
+            class="md:w-1/2 relative border overflow-hidden py-[1000px] px-[4%] bg-background rounded-tr-[650px] rounded-br-[10px]"
           >
-            <div class="relative pt-[20%] px-[5%] pb-[400px] border-b border-pink">
+            <div
+              class="relative pt-[20%] px-[5%] pb-[400px] border-b border-green"
+            >
               <h2>
                 <span
-                  class="absolute block top-0 w-full max-w-[280px] h-[60px] border border-pink skew-y-[-25deg] origin-left"
+                  class="absolute block top-0 w-full max-w-[280px] h-[60px] border border-green skew-y-[-25deg] origin-left"
                 ></span>
                 <span
-                  class="absolute top-[80px] block w-full max-w-[280px] h-[60px] border border-pink skew-y-[-25deg] origin-left"
+                  class="absolute top-[80px] block w-full max-w-[280px] h-[60px] border border-green skew-y-[-25deg] origin-left"
                 ></span>
                 <span
-                  class="absolute top-[80px] block w-full max-w-[280px] h-[60px] border border-pink bg-pink skew-y-[25deg] origin-left"
+                  class="absolute top-[80px] block w-full max-w-[280px] h-[60px] border border-green bg-green skew-y-[25deg] origin-left"
                 ></span>
-                <span class="absolute top-0 block text-[40px] skew-y-[25deg] origin-left uppercase text-pink"
-                  >About me</span
+                <span
+                  class="absolute top-0 block text-[40px] skew-y-[25deg] origin-left uppercase text-green"
+                  >Contact me</span
                 >
               </h2>
-              <span class="absolute right-0 bottom-[15px] text-pink text-2xl">01</span>
+              <span class="absolute right-0 bottom-[15px] text-green text-2xl"
+                >03</span
+              >
             </div>
             <div class="py-[20%] px-[5%]">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit deserunt id inventore accusantium cum
-              tempora earum, sint saepe voluptates, repudiandae doloremque nulla maxime minima ipsum eveniet quis
-              tenetur? Nisi, consectetur?
+              <ul class="space-y-8">
+                <li>
+                  <h2>
+                    <a
+                      href="https://www.linkedin.com/in/tnthanh2307/"
+                      class="underline font-bold"
+                      >LinkedIn</a
+                    >
+                  </h2>
+                  <p>More my information</p>
+                </li>
+                <li>
+                  <h2>
+                    <a
+                      href="https://github.com/thanhbican"
+                      class="underline font-bold"
+                      >Github</a
+                    >
+                  </h2>
+                  <p>
+                    Most of my projects are private. But let's check some other
+                    things
+                  </p>
+                </li>
+                <li>
+                  <h2 class="text-xl font-bold">
+                    This project inspired idea by
+                  </h2>
+                  <p>
+                    <a
+                      href="https://bokoko33.me/"
+                      target="_blank"
+                      rel="noopener"
+                      class="underline font-bold"
+                      >bokoko33.me</a
+                    >
+                    and <span class="font-bold">andrewwoan</span>
+                  </p>
+                </li>
+              </ul>
             </div>
           </section>
         </div>

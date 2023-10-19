@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -9,14 +9,36 @@ body {
   font-family: Montserrat, sans-serif;
 }
 
+#app {
+  overflow: hidden;
+}
+
 .light-theme {
-  --text-color: theme("colors.light.text");
-  --background-color: theme("colors.light.background");
-  --secondary-color: theme("colors.light.secondary");
+  --text-color: theme('colors.light.text');
+  --background-color: theme('colors.light.background');
+  --secondary-color: theme('colors.light.secondary');
+  --pink-color: #e5a1aa;
+  --blue-color: #8395cd;
+  --green-color: #7ad0ac;
 }
 
 .dark-theme {
-  --text-color: theme("colors.dark.text");
-  --background-color: theme("colors.dark.background");
-  --secondary-color: theme("colors.dark.secondary");
+  --text-color: theme('colors.dark.text');
+  --background-color: theme('colors.dark.background');
+  --secondary-color: theme('colors.dark.secondary');
+  --pink-color: #fff;
+  --blue-color: #fff;
+  --green-color: #fff;
+}
+
+@keyframes loading {
+  0% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(-12px);
+  }
+  40% {
+    transform: translateY(0);
+  }
 }

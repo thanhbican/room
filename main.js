@@ -1,4 +1,5 @@
-import "./css/style.css";
-import Viewer from "./src/Viewer";
+import './css/style.css'
 
-new Viewer(document.querySelector("#viewer-canvas"));
+import Viewer from './src/Viewer'
+
+new Viewer(document.querySelector('#viewer-canvas'))
